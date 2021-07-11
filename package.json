@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
+    "nvm": "^0.0.4",
     "pg": "^8.5.1",
     "pgtools": "^0.3.0",
     "sequelize": "^6.6.5"
