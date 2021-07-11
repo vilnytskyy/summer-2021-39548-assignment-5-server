@@ -54,9 +54,13 @@ const configureApp = async () => {
 };
 
 const bootApp = async () => {
-  await createDB();
-  await syncDatabase();
-  await configureApp();
+    await createDB();
+    
+    // good to keep for testing purposes
+    // remove if you want the data to persist
+    // remove when you're done with the project
+    await syncDatabase();
+    await configureApp();
 };
 
 bootApp();
