@@ -16,10 +16,10 @@ const apiRouter = require('./routes/index');
 const syncDatabase = async () => {
   //sync and seed
   try {
-    await db.sync({force: true});
+    await db.sync({force: true}); // remove force: true if you want the data to persist
     console.log('------Synced to db--------')
-    await seedDB();
-    console.log('--------Successfully seeded db--------');
+    await seedDB(); // comment out if you want the data to persist
+    console.log('--------Successfully seeded db--------'); // comment out if you want the data to persist
   } catch (err) {
     console.error('syncDB error:', err);
   }  
@@ -55,10 +55,6 @@ const configureApp = async () => {
 
 const bootApp = async () => {
     await createDB();
-    
-    // good to keep for testing purposes
-    // remove if you want the data to persist
-    // remove when you're done with the project
     await syncDatabase();
     await configureApp();
 };
