@@ -3,14 +3,30 @@ const db = require('../db');
 
 const Campus = db.define("campus", {
 
-  name: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
+    },
 
-  description: {
-    type: Sequelize.STRING,
-  }
+    imageUrl: {
+        type: Sequelize.STRING,
+        defaultValue: "campus.svg"
+    },
+
+    address: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
+    },
+
+    description: {
+        type: Sequelize.STRING,
+    }
 
 });
 
